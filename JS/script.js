@@ -20,11 +20,13 @@ async function fetchAnime() {
 
         animeList.innerHTML = data.data.map(anime => `
             <div class="anime-card">
-                <img src="${anime.image}" alt="${anime.title}" />
                 <h3>${anime.title}</h3>
-                <p>${anime.synopsis ? anime.synopsis.substring(0, 100000000) + '...' : ''}</p>
-                <span>Type: ${anime.type}</span>
-                <span>Episodes: ${anime.episodes}</span>
+                <img src="${anime.image}" alt="${anime.title}" />
+                <p><strong>Synopsis : </strong>${anime.synopsis ? anime.synopsis.substring(0, 100000000) + '...' : ''}<br></p>
+                <span><strong>Genres : </strong>${anime.genres}<br></span>
+                <span><strong>Classement : </strong>${anime.ranking}<br></span>
+                <span><strong>Type : </strong>${anime.type}<br></span>
+                <span id="nbEpisode"><strong>Nombre d'épisodes : </strong>${anime.episodes}<br></span>
             </div>
         `).join('');
     } catch (error) {
