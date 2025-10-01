@@ -3,10 +3,8 @@ let typeInput = document.getElementById("type");
 let parameterInput = document.getElementById("parametre-input");
 const animeList = document.getElementById('anime-list');
 
-console.log(parameterInput.value)
-
 async function fetchAnime() {
-    const url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10${parameterInput.value === "" ? `&search=${parameterInput.value}` : ''}${type.value === "" ? `&genres=${type.value}` : ''}&sortBy=ranking&sortOrder=asc`;
+    const url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10&${typeInput.value}=${parameterInput.value}&sortBy=ranking&sortOrder=asc`;
     console.log(url);
     const options = {
         method: 'GET',
