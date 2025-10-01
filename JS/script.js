@@ -4,7 +4,7 @@ let parameterInput = document.getElementById("parametre-input");
 const animeList = document.getElementById('anime-list');
 
 async function fetchAnime() {
-    const url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10&${typeInput.value}=${parameterInput.value}&sortBy=ranking&sortOrder=asc`;
+    const url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=${parameterInput.value}&${typeInput.value}=${parameterInput.value}&sortBy=ranking&sortOrder=asc`;
     console.log(url);
     const options = {
         method: 'GET',
@@ -22,7 +22,7 @@ async function fetchAnime() {
             <div class="anime-card">
                 <img src="${anime.image}" alt="${anime.title}" />
                 <h3>${anime.title}</h3>
-                <p>${anime.synopsis ? anime.synopsis.substring(0, 100000000) + '...' : ''}</p>
+                <p>${anime.synopsis}</p>
                 <span>Type: ${anime.type}</span>
                 <span>Episodes: ${anime.episodes}</span>
             </div>
