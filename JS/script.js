@@ -1,5 +1,5 @@
 let researchButton = document.getElementById("research-button");
-let typeInput = document.getElementById("type-input");
+let typeInput = document.getElementById("type");
 let parameterInput = document.getElementById("parametre-input");
 const animeList = document.getElementById('anime-list');
 
