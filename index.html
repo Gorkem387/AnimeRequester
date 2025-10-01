@@ -11,23 +11,38 @@
 
     <header>
         <h1>Anime Requester</h1>
-        <div>
-            <p>Choisissez un type de recherche :</p>
-            <input type="text" id="uname" name="name" />
-            <p>Paramètre :</p>
-            <input type="text" id="uname" name="name" />
+        <div class = "search-box">
+            <form action="#" methode="get"></form>
+            <div class="form-row">
+                <label for="type">Choisissez un type de recherche :</label>
+                <select name="type" id="type">
+                    <option value="">option1</option>
+                    <option value="">option1</option>
+                    <option value="">option1</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="type">Paramètre :</label>
+                <input type="text">
+            </div>
         </div>
-        <button>Rechercher</button>
-        <button>Effacer</button>
+        <div class="btns">
+            <button type="submit">Rechercher</button>
+            <button type="reset">Effacer</button>
+        </div>
     </header>
 
     <main>
-        <h2>Naruto</h2>
-        <img src="images/naruto.jpg" alt="Photo de l'anime Naruto">
-        <p><strong>Synopsis :</strong> bla bla bla</p>
-        <p><strong>Genres :</strong> N/A</p>
-        <p><strong>Classement :</strong> ...</p>
-        <p><strong>Nombre d'épisodes :</strong> ...</p>
+        <div class="content">
+            <h2>Naruto</h2>
+            <img src="images/naruto.jpg" alt="Photo de l'anime Naruto">
+        </div>
+        <div class="description">
+            <p><strong>Synopsis :</strong> bla bla bla</p>
+            <p><strong>Genres :</strong> N/A</p>
+            <p><strong>Classement :</strong> ...</p>
+            <p><strong>Nombre d'épisodes :</strong> ...</p>
+        </div>
     </main>
 
     <footer>
