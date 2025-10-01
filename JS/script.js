@@ -4,7 +4,7 @@ let parameterInput = document.getElementById("parametre-input");
 const animeList = document.getElementById('anime-list');
 
 async function fetchAnime() {
-    const url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10&${typeInput.value}=${parameterInput.value}&sortBy=ranking&sortOrder=asc`;
+    const url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=${parameterInput.value}&${typeInput.value}=${parameterInput.value}&sortBy=ranking&sortOrder=asc`;
     console.log(url);
     const options = {
         method: 'GET',
@@ -22,11 +22,11 @@ async function fetchAnime() {
             <div class="anime-card">
                 <h3>${anime.title}</h3>
                 <img src="${anime.image}" alt="${anime.title}" />
-                <p><strong>Synopsis : </strong>${anime.synopsis ? anime.synopsis.substring(0, 100000000) + '...' : ''}<br></p>
+                <p><strong>Synopsis : </strong>${anime.synopsis}<br></p>
                 <span><strong>Genres : </strong>${anime.genres}<br></span>
                 <span><strong>Classement : </strong>${anime.ranking}<br></span>
                 <span><strong>Type : </strong>${anime.type}<br></span>
-                <span id="nbEpisode"><strong>Nombre d'épisodes : </strong>${anime.episodes}<br></span>
+                <span><strong>Nombre d'épisodes : </strong>${anime.episodes}<br></span>
             </div>
         `).join('');
     } catch (error) {
