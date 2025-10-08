@@ -1,7 +1,7 @@
 let researchButton = document.getElementById("research-button");
 let typeInput = document.getElementById("type");
 let parameterInput = document.getElementById("parametre-input");
-const animeList = document.getElementById('anime-list');
+const animeList = document.getElementById('anime-card');
 
 async function fetchAnime() {
     let url;
@@ -25,12 +25,26 @@ async function fetchAnime() {
         const data = await response.json(); // Get JSON result
 
         animeList.innerHTML = data.data.map(anime => `
+            <style>
+                .anime-card h3, p, img {
+                    margin-bottom: 14px;
+                }
+                hr {
+                    border: none;
+                    height: 1px;
+                    background-color: #000;
+                    margin: 20px 0;
+                }
+            </style>
             <div class="anime-card">
-                <img src="${anime.image}" alt="${anime.title}" />
                 <h3>${anime.title}</h3>
-                <p>${anime.synopsis}</p>
-                <span>Type: ${anime.type}</span>
-                <span>Episodes: ${anime.episodes}</span>
+                <img src="${anime.image}" alt="${anime.title}" />
+                <p><strong>Synopsis : </strong>${anime.synopsis}</p>
+                <p><strong>Genres : </strong>${anime.genres}</p>
+                <p><strong>Classement : </strong>${anime.ranking}</p>
+                <p><strong>Type : </strong>${anime.type}</p>
+                <p><strong>Nombre d'épisodes : </strong>${anime.episodes}</p>
+                <hr>
             </div>
         `).join('');
     } catch (error) {
