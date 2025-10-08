@@ -144,3 +144,27 @@ img {
         margin-bottom: 6px;
     }
 }
+
+@media only screen and (max-width: 399px) {
+    
+    .form-row select,
+    .form-row input[type="text"] {
+      width: 250px;
+    }
+
+    .btns button {
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    
+    .form-row select,
+    .form-row input[type="text"] {
+      width: 400px;
+    }
+
+    .btns button {
+        width: 300px;
+    }
+}
