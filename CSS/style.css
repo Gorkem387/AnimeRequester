@@ -75,10 +75,43 @@ main {
 }
 
 img {
-    width: 500px;
-    height: 600px;
+    width: 400px;
+    height: 500px;
 }
 
 .description p {
     margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    img {
+        width: 200px;
+        height: 300px;
+    }
+
+    .form-row {
+        display: block;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    
+    .form-row select,
+    .form-row input[type="text"] {
+      flex: 1;
+      padding: 6px;
+      border: 1px solid #333333;
+      background-color: #ffff;
+      width: 300px;
+      margin-top: 10px;
+    }
+    
+    .btns button {
+        background-color: rgb(231, 182, 46);
+        border: none;
+        width: 300px;
+        height: 30px;
+        cursor: pointer;
+        margin-bottom: 6px;
+    }
 }

@@ -1,7 +1,13 @@
 let researchButton = document.getElementById("research-button");
 let typeInput = document.getElementById("type");
 let parameterInput = document.getElementById("parametre-input");
+let resetButton = document.getElementById("reset-button");
 const animeList = document.getElementById('anime-card');
+
+resetButton.addEventListener('click', () => {
+    document.getElementById('parametre-input').value = '';
+    document.getElementById('type').innerHTML = '';
+});
 
 async function fetchAnime() {
     let url;
