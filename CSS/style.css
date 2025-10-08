@@ -71,12 +71,14 @@ header {
     width: 300px;
     height: 30px;
     cursor: pointer;
-}
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;}
 
 .btns button:hover {
     background-color: #f7f7f7;
     color: rgb(231, 182, 46);
     border: 2px solid rgb(231, 182, 46);
+    transform: scale(1.1);
 }
 
 main {

@@ -1,7 +1,13 @@
 let researchButton = document.getElementById("research-button");
 let typeInput = document.getElementById("type");
 let parameterInput = document.getElementById("parametre-input");
+let resetButton = document.getElementById("reset-button");
 const animeList = document.getElementById('anime-card');
+
+resetButton.addEventListener('click', () => {
+    document.getElementById('parametre-input').value = '';
+    document.getElementById('type').value = '';
+});
 
 async function fetchAnime() {
     let url;
@@ -35,11 +41,17 @@ async function fetchAnime() {
                     background-color: #000;
                     margin: 20px 0;
                 }
+                .anime-card #synopsis{
+                    max-width: 600px;
+                    margin: 0 auto;
+                    text-align: center;
+                    margin-bottom: 14px;
+                }
             </style>
             <div class="anime-card">
                 <h3>${anime.title}</h3>
                 <img src="${anime.image}" alt="${anime.title}" />
-                <p><strong>Synopsis : </strong>${anime.synopsis}</p>
+                <p id="synopsis"><strong>Synopsis : </strong>${anime.synopsis}</p>
                 <p><strong>Genres : </strong>${anime.genres}</p>
                 <p><strong>Classement : </strong>${anime.ranking}</p>
                 <p><strong>Type : </strong>${anime.type}</p>
