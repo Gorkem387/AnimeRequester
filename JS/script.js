@@ -11,13 +11,11 @@ resetButton.addEventListener('click', () => {
 
 async function fetchAnime() {
     let url;
-    console.log(typeInput.value)
     if (typeInput.value === "genres") {
         url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10&genres=${parameterInput.value}&sortBy=ranking&sortOrder=asc`;
     } else {
         url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=${parameterInput.value}&${typeInput.value}=${parameterInput.value}&sortBy=ranking&sortOrder=asc`;
     }
-    console.log(url);
     const options = {
         method: 'GET',
         headers: {
