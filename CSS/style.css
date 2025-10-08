@@ -172,3 +172,19 @@ img {
         width: 250px;
     }
 }
+
+@media only screen and (max-width: 340px) {
+    
+    .form-row select,
+    .form-row input[type="text"] {
+      width: 200px;
+    }
+
+    .btns button {
+        width: 200px;
+    }
+
+    .header-top h1 {
+        font-size: 20px;
+    }
+}
