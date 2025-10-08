@@ -6,7 +6,7 @@ const animeList = document.getElementById('anime-card');
 
 resetButton.addEventListener('click', () => {
     document.getElementById('parametre-input').value = '';
-    document.getElementById('type').innerHTML = '';
+    document.getElementById('type').value = '';
 });
 
 async function fetchAnime() {
