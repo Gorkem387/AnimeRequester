@@ -38,7 +38,7 @@ async function fetchAnime() {
                 hr {
                     border: none;
                     height: 1px;
-                    background-color: #000;
+                    background-color: var(--text-color);
                     margin: 20px 0;
                 }
                 .anime-card #synopsis{
