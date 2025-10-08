@@ -145,7 +145,7 @@ img {
     }
 }
 
-@media only screen and (max-width: 399px) {
+@media only screen and (max-width: 400px) {
     
     .form-row select,
     .form-row input[type="text"] {
@@ -158,5 +158,17 @@ img {
 
     .header-top h1 {
         font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    
+    .form-row select,
+    .form-row input[type="text"] {
+      width: 360px;
+    }
+
+    .btns button {
+        width: 250px;
     }
 }
