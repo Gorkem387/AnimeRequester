@@ -63,7 +63,6 @@ async function fetchAnime() {
 }
 
 (function () {
-
     const root = document.documentElement;
   
     function toggleDarkMode() {
@@ -90,6 +89,24 @@ async function fetchAnime() {
     });
   
   })();
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const selectType = document.getElementById("type");
+    const inputText = document.getElementById("parametre-input");
+    const selectGenres = document.getElementById("parametre-select");
+
+    selectType.addEventListener("change", () => {
+        const selected = selectType.value;
+
+        if (selected === "genres") {
+            inputText.style.display = "none";
+            selectGenres.style.display = "inline-block";
+        } else {
+            inputText.style.display = "inline-block";
+            selectGenres.style.display = "none";
+        }
+    });
+});
 
 researchButton.addEventListener('click', () => {
     fetchAnime();

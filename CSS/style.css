@@ -9,6 +9,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     padding: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 header {
@@ -106,7 +107,6 @@ img {
 	--text-color: #212121;
 }
 
-/* 🌚 Style sombre */
 [data-theme="dark"] {
 	--bg-color: #212121;
 	--text-color: #ececec;
