@@ -4,6 +4,37 @@ let parameterInput = document.getElementById("parametre-input");
 let resetButton = document.getElementById("reset-button");
 const animeList = document.getElementById('anime-card');
 
+
+// Ce code change le textInput en Selector
+const genresList = [
+    "Action","Adventure","Avant Garde","Award Winning","Boys Love","Comedy","Drama","Erotica","Ecchi","Fantasy","Girls Love","Gourmet","Hentai","Horror","Mystery","Romance","Sci-Fi","Slice of Life","Sports","Supernatural","Suspense"
+];
+typeInput.addEventListener('change', () => {
+    if (typeInput.value === "genres") {
+        // Crée le select
+        const select = document.createElement('select')
+        select.id = "parametre-input"
+        genresList.forEach(genre => {
+            const option = document.createElement('option')
+            option.value = genre
+            option.textContent = genre
+            select.appendChild(option);
+        });
+        // Remplace l'input par le select
+        parameterInput.replaceWith(select);
+        parameterInput = select
+    } else {
+        // Remets l'input texte si ce n'est pas déjà un input
+        if (parameterInput.tagName.toLowerCase() !== 'input') {
+            const input = document.createElement('input');
+            input.type = "text"
+            input.id = "parametre-input"
+            parameterInput.replaceWith(input);
+            parameterInput = input
+        }
+    }
+});
+
 resetButton.addEventListener('click', () => {
     document.getElementById('parametre-input').value = '';
     document.getElementById('type').value = '';
