@@ -14,7 +14,7 @@
 
 ## Authors
 
-* Utilisateurs ayant contribués au projet
+Utilisateurs ayant contribués au projet
 
 * @Gorkem387
 * @Oryx87
@@ -22,5 +22,5 @@
 
 ## Lien
 
-* https://rapidapi.com/hub
+https://rapidapi.com/hub
 
