@@ -20,7 +20,8 @@ Utilisateurs ayant contribués au projet
 * @Oryx87
 * @sunlyimo
 
-## Lien
+## Liens
 
-https://rapidapi.com/hub
+* https://gorkem387.github.io/AnimeRequester/
+* https://rapidapi.com/hub
 
