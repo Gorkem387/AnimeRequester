@@ -53,17 +53,17 @@ header {
 }
 
 .form-row label {
-    flex : 0 0 280px;
+    flex: 0 0 280px;
     text-align: left;
 }
 
 .form-row select,
 .form-row input[type="text"] {
-  flex: 1;
-  padding: 6px;
-  border: 1px solid #333333;
-  background-color: #ffff;
-  width: 600px;
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #333333;
+    background-color: #ffff;
+    width: 600px;
 }
 
 .btns button {
@@ -73,7 +73,8 @@ header {
     height: 30px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 5px;}
+    border-radius: 5px;
+}
 
 .btns button:hover {
     background-color: #f7f7f7;
@@ -81,6 +82,27 @@ header {
     border: 2px solid rgb(231, 182, 46);
     transform: scale(1.1);
 }
+
+.anime-card h3,
+p,
+img {
+    margin-bottom: 14px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--text-color);
+    margin: 20px 0;
+}
+
+.anime-card #synopsis {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
 
 main {
     text-align: center;
@@ -103,17 +125,17 @@ img {
 }
 
 [data-theme="light"] {
-	--bg-color: #ececec;
-	--text-color: #212121;
+    --bg-color: #ececec;
+    --text-color: #212121;
 }
 
 [data-theme="dark"] {
-	--bg-color: #212121;
-	--text-color: #ececec;
+    --bg-color: #212121;
+    --text-color: #ececec;
 }
 
 @media only screen and (max-width: 600px) {
-    
+
     img {
         width: 200px;
         height: 300px;
@@ -124,17 +146,17 @@ img {
         align-items: center;
         margin-bottom: 12px;
     }
-    
+
     .form-row select,
     .form-row input[type="text"] {
-      flex: 1;
-      padding: 6px;
-      border: 1px solid #333333;
-      background-color: #ffff;
-      width: 300px;
-      margin-top: 10px;
+        flex: 1;
+        padding: 6px;
+        border: 1px solid #333333;
+        background-color: #ffff;
+        width: 300px;
+        margin-top: 10px;
     }
-    
+
     .btns button {
         background-color: rgb(231, 182, 46);
         border: none;
@@ -146,10 +168,10 @@ img {
 }
 
 @media only screen and (max-width: 400px) {
-    
+
     .form-row select,
     .form-row input[type="text"] {
-      width: 250px;
+        width: 250px;
     }
 
     .btns button {
@@ -162,10 +184,10 @@ img {
 }
 
 @media only screen and (min-width: 700px) {
-    
+
     .form-row select,
     .form-row input[type="text"] {
-      width: 360px;
+        width: 360px;
     }
 
     .btns button {
@@ -174,10 +196,10 @@ img {
 }
 
 @media only screen and (max-width: 340px) {
-    
+
     .form-row select,
     .form-row input[type="text"] {
-      width: 200px;
+        width: 200px;
     }
 
     .btns button {
