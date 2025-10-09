@@ -62,23 +62,6 @@ async function fetchAnime() {
         const data = await response.json(); // Get JSON result
 
         animeList.innerHTML = data.data.map(anime => `
-            <style>
-                .anime-card h3, p, img {
-                    margin-bottom: 14px;
-                }
-                hr {
-                    border: none;
-                    height: 1px;
-                    background-color: var(--text-color);
-                    margin: 20px 0;
-                }
-                .anime-card #synopsis{
-                    max-width: 600px;
-                    margin: 0 auto;
-                    text-align: center;
-                    margin-bottom: 14px;
-                }
-            </style>
             <div class="anime-card">
                 <h3>${anime.title}</h3>
                 <img src="${anime.image}" alt="${anime.title}" />
