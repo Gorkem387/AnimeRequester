@@ -5,6 +5,7 @@ Site pour rechercher des animés
 ## Description
 
 Possibilités de rechercher des animés par titres/genres/type
+Le résultat de la recherche est trié par ordre croissant de classement
 
 ## Clé API
 
