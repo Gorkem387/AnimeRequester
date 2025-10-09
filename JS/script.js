@@ -125,7 +125,3 @@ async function fetchAnime() {
 researchButton.addEventListener('click', () => {
     fetchAnime();
 })
-
-if ( typeInput.value === genres){
-    
-}
