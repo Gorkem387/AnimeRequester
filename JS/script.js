@@ -118,11 +118,11 @@ async function fetchAnime() {
       const currentTheme = root.getAttribute("data-theme");
       const newTheme = currentTheme === "light" ? "dark" : "light";
       root.setAttribute("data-theme", newTheme);
-      localStorage.setItem("theme", newTheme);
+      sessionStorage.setItem("theme", newTheme);
     }
   
     function init() {
-      const storedPreference = localStorage.getItem("theme");
+      const storedPreference = sessionStorage.getItem("theme");
       const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       const theme = storedPreference || (systemPrefersDark ? "dark" : "light");
       root.setAttribute("data-theme", theme);
