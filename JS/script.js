@@ -143,7 +143,7 @@ async function fetchAnime() {
     const selectType = document.getElementById("type");
     const inputText = document.getElementById("parametre-input");
     const selectGenres = document.getElementById("parametre-select");
-
+    if (selectGenres == null) {return}
     selectType.addEventListener("change", () => {
         const selected = selectType.value;
 
