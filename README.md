@@ -43,7 +43,7 @@ Le projet utilise les languages suivants :
 
 ### ✨ Version avancée (V2)
 
-- Recherche par **genre** (liste de cases à cocher ou champ de saisie assistée)
+- Recherche par **genre** (liste de tous les genres)
 - **Mode clair / sombre** (préférence enregistrée dans `sessionStorage`)
 - Interface pour saisir la **clé API**, stockée en `sessionStorage`
 - Projet déployé sur **GitHub Pages**
