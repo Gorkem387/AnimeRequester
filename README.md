@@ -1,6 +1,6 @@
 # 🎌 Anime Requester
 
-Projet réalisé dans le cadre du module **JavaScript 1**  
+Projet réalisé dans le cadre du module **JavaScript**  
 **Groupe :**
 - 👤 @Gorkem387
 - 👤 @Oryx87
