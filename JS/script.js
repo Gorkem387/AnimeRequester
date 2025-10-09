@@ -7,7 +7,7 @@ const animeList = document.getElementById('anime-card');
 
 // Ce code change le textInput en Selector
 const genresList = [
-    "Action","Adventure","Avant Garde","Award Winning","Boys Love","Comedy","Drama","Erotica","Ecchi","Fantasy","Girls Love","Gourmet","Hentai","Horror","Mystery","Romance","Sci-Fi","Slice of Life","Sports","Supernatural","Suspense"
+    "Action", "Adventure", "Avant Garde", "Award Winning", "Boys Love", "Comedy", "Drama", "Erotica", "Ecchi", "Fantasy", "Girls Love", "Gourmet", "Hentai", "Horror", "Mystery", "Romance", "Sci-Fi", "Slice of Life", "Sports", "Supernatural", "Suspense"
 ];
 typeInput.addEventListener('change', () => {
     if (typeInput.value === "genres") {
@@ -40,8 +40,6 @@ resetButton.addEventListener('click', () => {
     document.getElementById('type').value = '';
 });
 
-let apiKey;
-
 async function fetchAnime() {
     const typeInput = document.getElementById("type");
     const parameterInput = document.getElementById("parametre-input");
@@ -61,7 +59,7 @@ async function fetchAnime() {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': apiKey,
+            'x-rapidapi-key': getCleApi(),
             'x-rapidapi-host': 'anime-db.p.rapidapi.com'
         }
     };
@@ -113,37 +111,37 @@ async function fetchAnime() {
 
 (function () {
     const root = document.documentElement;
-  
-    function toggleDarkMode() {
-      const currentTheme = root.getAttribute("data-theme");
-      const newTheme = currentTheme === "light" ? "dark" : "light";
-      root.setAttribute("data-theme", newTheme);
-      localStorage.setItem("theme", newTheme);
-    }
-  
-    function init() {
-      const storedPreference = localStorage.getItem("theme");
-      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const theme = storedPreference || (systemPrefersDark ? "dark" : "light");
-      root.setAttribute("data-theme", theme);
-    }
-  
-    init();
-  
-    document.addEventListener("DOMContentLoaded", function () {
-      const togglers = document.querySelectorAll("[data-theme-toggler]");
-      togglers.forEach((toggler) => {
-        toggler.addEventListener("click", toggleDarkMode);
-      });
-    });
-  
-  })();
 
-  document.addEventListener("DOMContentLoaded", () => {
+    function toggleDarkMode() {
+        const currentTheme = root.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        root.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+    }
+
+    function init() {
+        const storedPreference = localStorage.getItem("theme");
+        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = storedPreference || (systemPrefersDark ? "dark" : "light");
+        root.setAttribute("data-theme", theme);
+    }
+
+    init();
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const togglers = document.querySelectorAll("[data-theme-toggler]");
+        togglers.forEach((toggler) => {
+            toggler.addEventListener("click", toggleDarkMode);
+        });
+    });
+
+})();
+
+document.addEventListener("DOMContentLoaded", () => {
     const selectType = document.getElementById("type");
     const inputText = document.getElementById("parametre-input");
     const selectGenres = document.getElementById("parametre-select");
-    if (selectGenres == null) {return}
+    if (selectGenres == null) { return }
     selectType.addEventListener("change", () => {
         const selected = selectType.value;
 
@@ -161,8 +159,21 @@ researchButton.addEventListener('click', () => {
     fetchAnime();
 })
 
-function demanderCleApi(){
-    apiKey = prompt("Veuillez entrer votre clé API :");
+// Récupère la clé API depuis le sessionStorage
+function getCleApi() {
+    return sessionStorage.getItem("apiKey");
 }
 
+// Demande la clé API si elle n'est pas déjà stockée
+function demanderCleApi() {
+    const cleApi = getCleApi();
+    if (cleApi === null) {
+        const nouvelleCle = prompt("Veuillez entrer votre clé API :");
+        if (nouvelleCle !== null && nouvelleCle.trim() !== "") {
+            sessionStorage.setItem("apiKey", nouvelleCle);
+        }
+    }
+}
+
+// Appelle la fonction quand la page est chargée
 window.onload = demanderCleApi;
