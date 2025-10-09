@@ -40,6 +40,8 @@ resetButton.addEventListener('click', () => {
     document.getElementById('type').value = '';
 });
 
+let apiKey;
+
 async function fetchAnime() {
     let url;
     if (typeInput.value === "genres") {
@@ -50,7 +52,7 @@ async function fetchAnime() {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '5eb46f1820msh197ed5417a31ffcp1f06c5jsne1c8bcb5202b',
+            'x-rapidapi-key': apiKey,
             'x-rapidapi-host': 'anime-db.p.rapidapi.com'
         }
     };
@@ -126,6 +128,8 @@ researchButton.addEventListener('click', () => {
     fetchAnime();
 })
 
-if ( typeInput.value === genres){
-    
+function demanderCleApi(){
+    apiKey = prompt("Veuillez entrer votre clé API :");
 }
+
+window.onload = demanderCleApi;
