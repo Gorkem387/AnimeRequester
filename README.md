@@ -1,27 +1,57 @@
-# Anime Requester
+# 🎌 Anime Requester
 
-* Site pour rechercher des animés
+Projet réalisé dans le cadre du module **JavaScript 1**  
+**Groupe :**
+- 👤 @Gorkem387
+- 👤 @Oryx87
+- 👤 @sunlyimo
 
-## Description
+---
 
-* Possibilités de rechercher des animés par titres/genres/type
-* Le résultat de la recherche est trié par ordre croissant de classement
+## 📌 Objectif du projet
 
-## Clé API
+Créer une page Web permettant à l'utilisateur de rechercher des animes en interrogeant une API publique (Anime DB via RapidAPI).
 
-* Se rendre sur le site RapideAPI
-* Récuperer sa clé API de AnimeDB puis la copier-coller dans le formulaire API du site
+Le projet utilise les languages suivants :
 
-## Authors
+- HTML
+- CSS
+- JavaScript
+- API REST (Anime DB)
+- Git & GitHub
 
-Utilisateurs ayant contribués au projet
+---
 
-* @Gorkem387
-* @Oryx87
-* @sunlyimo
+## 🔧 Fonctionnalités
 
-## Liens
+### ✅ Version de base (V1)
 
-* https://gorkem387.github.io/AnimeRequester/
-* https://rapidapi.com/hub
+- Recherche par **nom**, **identifiant** ou **classement** via un formulaire
+- Affichage dynamique (max. 10 cartes) avec les informations suivantes :
+  - Titre
+  - Image (si disponible)
+  - Synopsis
+  - Genres
+  - Classement
+  - Nombre d’épisodes
+- Deux boutons :
+  - **Rechercher**
+  - **Réinitialiser**
+- Design responsive
+- Code conforme aux standards W3C (HTML/CSS)
+- Découpage modulaire du code JavaScript
 
+### ✨ Version avancée (V2)
+
+- Recherche par **genre** (liste de cases à cocher ou champ de saisie assistée)
+- **Mode clair / sombre** (préférence enregistrée dans `sessionStorage`)
+- Interface pour saisir la **clé API**, stockée en `sessionStorage`
+- Projet déployé sur **GitHub Pages**
+
+---
+
+## 🚀 Comment utiliser le projet
+
+1. Cloner le repository :
+   ```bash
+   git clone https://github.com/<votre-utilisateur>/anime-requester.git
