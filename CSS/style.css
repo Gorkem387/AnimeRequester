@@ -134,7 +134,21 @@ img {
     --text-color: #ececec;
 }
 
-@media only screen and (max-width: 600px) {
+.div-checkbox {
+    display: flex;
+    margin-left: 20px;
+
+}
+
+#parametre-genre {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 800px) {
 
     img {
         width: 75%;

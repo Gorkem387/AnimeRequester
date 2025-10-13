@@ -13,16 +13,21 @@ typeInput.addEventListener('change', () => {
     if (typeInput.value === "genres") {
         // Crée le select
         const select = document.createElement('div')
-        select.id = "parametre-input"
+        select.id = "parametre-genre"
         genresList.forEach(genre => {
+            const div = document.createElement('div')
+            div.className = 'div-checkbox'
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.value = genre
             checkbox.className = 'parametre-input'
+            checkbox.id = 'checkbox-genre'
             const label = document.createElement('label')
             label.textContent = genre
-            select.appendChild(checkbox);
-            select.appendChild(label);
+            
+            div.appendChild(checkbox);
+            div.appendChild(label);
+            select.appendChild(div)
         });
         // Remplace l'input par le select
         parameterInput.replaceWith(select);
