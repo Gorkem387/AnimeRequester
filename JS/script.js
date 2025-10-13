@@ -24,7 +24,7 @@ typeInput.addEventListener('change', () => {
         parameterInput.replaceWith(select);
         parameterInput = select
     } else {
-        // Remets l'input texte si ce n'est pas déjà un input
+        // Remet l'input texte si ce n'est pas déjà un input
         if (parameterInput.tagName.toLowerCase() !== 'input') {
             const input = document.createElement('input');
             input.type = "text"
