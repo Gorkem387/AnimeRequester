@@ -12,13 +12,17 @@ const genresList = [
 typeInput.addEventListener('change', () => {
     if (typeInput.value === "genres") {
         // Crée le select
-        const select = document.createElement('select')
+        const select = document.createElement('div')
         select.id = "parametre-input"
         genresList.forEach(genre => {
-            const option = document.createElement('option')
-            option.value = genre
-            option.textContent = genre
-            select.appendChild(option);
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = genre
+            checkbox.className = 'parametre-input'
+            const label = document.createElement('label')
+            label.textContent = genre
+            select.appendChild(checkbox);
+            select.appendChild(label);
         });
         // Remplace l'input par le select
         parameterInput.replaceWith(select);
@@ -47,7 +51,14 @@ async function fetchAnime() {
 
     let url;
     if (typeInput.value === "genres") {
-        url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10&genres=${parameterInput.value}&sortBy=ranking&sortOrder=asc`;
+        let checkbox_list = document.getElementsByClassName('parametre-input');
+        let genres = ''
+        Array.from(checkbox_list).forEach((checkbox) => {
+            if (checkbox.checked) {
+                genres = (genres === '') ? genres.concat(checkbox.value) : genres.concat(','+checkbox.value)
+            }
+        });
+        url = `https://anime-db.p.rapidapi.com/anime?page=1&size=10&genres=${genres}&sortBy=ranking&sortOrder=asc`;
     } else if (typeInput.value === "id") {
         url = `https://anime-db.p.rapidapi.com/anime/by-id/${parameterInput.value}`;
     } else if (typeInput.value === "rank") {
@@ -111,31 +122,31 @@ async function fetchAnime() {
 
 (function () {
     const root = document.documentElement;
-  
+
     function toggleDarkMode() {
-      const currentTheme = root.getAttribute("data-theme");
-      const newTheme = currentTheme === "light" ? "dark" : "light";
-      root.setAttribute("data-theme", newTheme);
-      sessionStorage.setItem("theme", newTheme);
+        const currentTheme = root.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        root.setAttribute("data-theme", newTheme);
+        sessionStorage.setItem("theme", newTheme);
     }
-  
+
     function init() {
-      const storedPreference = sessionStorage.getItem("theme");
-      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const theme = storedPreference || (systemPrefersDark ? "dark" : "light");
-      root.setAttribute("data-theme", theme);
+        const storedPreference = sessionStorage.getItem("theme");
+        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = storedPreference || (systemPrefersDark ? "dark" : "light");
+        root.setAttribute("data-theme", theme);
     }
-  
+
     init();
-  
+
     document.addEventListener("DOMContentLoaded", function () {
-      const togglers = document.querySelectorAll("[data-theme-toggler]");
-      togglers.forEach((toggler) => {
-        toggler.addEventListener("click", toggleDarkMode);
-      });
+        const togglers = document.querySelectorAll("[data-theme-toggler]");
+        togglers.forEach((toggler) => {
+            toggler.addEventListener("click", toggleDarkMode);
+        });
     });
-  
-  })();
+
+})();
 
 document.addEventListener("DOMContentLoaded", () => {
     const selectType = document.getElementById("type");
