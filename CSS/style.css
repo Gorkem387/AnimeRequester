@@ -137,7 +137,11 @@ img {
 .div-checkbox {
     display: flex;
     margin-left: 20px;
+    margin-bottom: 10px;
 
+    label {
+        margin-left: 5px;
+    }
 }
 
 #parametre-genre {
